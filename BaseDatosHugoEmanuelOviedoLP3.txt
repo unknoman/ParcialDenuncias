@@ -1,0 +1,13 @@
+create database parcial1LP3;
+use parcial1LP3;
+CREATE TABLE DenunciaCategorias (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    nombre VARCHAR(50)
+);
+
+CREATE TABLE Denuncias (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    texto VARCHAR(MAX),
+    idDenunciaCategoria INT,
+    FOREIGN KEY (idDenunciaCategoria) REFERENCES DenunciaCategorias(id)
+);
